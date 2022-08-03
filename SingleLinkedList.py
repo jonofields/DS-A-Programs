@@ -1,4 +1,5 @@
 
+
 class Node:
     def __init__(self,value):
         self.info = value
@@ -68,10 +69,27 @@ class SingleLinkedList:
             self.insert_at_end(data)
 
     def insert_after(self,data,x):
-        pass
+        p = self.start
+        temp = Node(data)
+        while p is not None:
+            if p.info == x:
+                p = p.info
+                temp.link = p.link
+                p.link = temp
+                break
+
 
     def insert_before(self,data,x):
-        pass
+        p = self.start
+        temp = Node(data)
+        while p.link is not None:
+            if p.link.info == x:
+                p = p.link
+                temp.link = p
+                p.link = temp
+                break
+
+
     
     def insert_at_position(self,data,x):
         pass
